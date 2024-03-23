@@ -45,6 +45,14 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
+# It provides authentication system for users
+gem 'devise'
+
+# It provides a inbuilt platform to perform CRUD
+gem 'activeadmin'
+gem 'sass-rails'
+gem 'bcrypt', platforms: :ruby
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
