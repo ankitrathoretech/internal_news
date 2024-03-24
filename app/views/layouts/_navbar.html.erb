@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+<body>
+
+<div class="navbar">
+  <a class="active"><i class="fa fa-fw fa-home"></i> <%= link_to "Home", root_path, style: "color:white" %></a> 
+  <%if !user_signed_in? %> 
+    <a><i class="fa fa-fw fa-user"></i><%= link_to "Login", new_user_session_path %></a>
+    <a><i class="fa fa-fw fa-user"></i><%= link_to "Signup", new_user_registration_path %></a>
+  <% else %> 
+    <a><i class="fa fa-fw fa-user"></i><%= link_to "Logout", destroy_user_session_path, method: :delete %></a>
+  <%end%>
+</div>
+
+</body>
+</html> 
